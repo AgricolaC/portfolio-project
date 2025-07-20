@@ -1,18 +1,23 @@
 ---
 import Navbar from '../components/Navbar.astro';
-const { title = "My Portfolio" } = Astro.props; // Dynamic title prop, fallback is "My Portfolio"
+const { title = "My Portfolio" } = Astro.props;
 ---
 <html lang="en">
   <head>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{title}</title> <!-- Page-specific title -->
+    <title>{title}</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+    </style>
   </head>
-  <body class="bg-white text-gray-800 font-sans"> <!-- Light theme, readable font -->
-    <Navbar /> <!-- Consistent top navigation on every page -->
-    <main class="max-w-4xl mx-auto px-4 py-8"> <!-- Centered content with padding -->
-      <slot /> <!-- Slot for page-specific content -->
+  <body class="bg-white text-gray-800 font-sans">
+    <Navbar />
+    <main class="max-w-5xl mx-auto px-4 pt-24">
+      <slot />
     </main>
   </body>
 </html>
