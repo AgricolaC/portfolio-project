@@ -15,6 +15,17 @@ export default {
       fontFamily: {
         sans: ['Inter', 'sans-serif'],
       },
+      typography: (theme) => ({
+        primary: {
+          css: {
+            '--tw-prose-body': theme('colors.gray.800'),
+            '--tw-prose-headings': theme('colors.primary.DEFAULT'),
+            '--tw-prose-links': theme('colors.primary.light'),
+            '--tw-prose-bold': theme('colors.primary.dark'),
+            '--tw-prose-underline': theme('colors.primary.DEFAULT'),
+          }
+        }
+      })
     },
   },
   plugins: [typography],
