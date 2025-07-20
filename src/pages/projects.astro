@@ -1,0 +1,20 @@
+---
+import Layout from '../components/Layout.astro'; // Use shared layout
+---
+<Layout title="Projects"> <!-- Title passed to <Layout> -->
+  <h1 class="text-2xl font-bold mb-4">Projects</h1> <!-- Page heading -->
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <!-- Responsive grid: 1 column on mobile, 2 on medium screens -->
+    <div class="p-4 border rounded-xl hover:shadow-md">
+      <!-- Card container with border and hover effect -->
+      <h2 class="text-xl font-semibold">Titanic EDA</h2>
+      <p class="text-sm text-gray-600">
+        Exploratory data analysis of Titanic survival data using Python.
+      </p>
+      <a href="/eda" class="text-blue-500 hover:underline">View EDA →</a>
+    </div>
+    
+    <!-- 🔜 You can add more project cards below like this -->
+  </div>
+</Layout>
