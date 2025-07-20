@@ -1,11 +1,13 @@
-// @ts-check
+// astro.config.mjs
 import { defineConfig } from 'astro/config';
-
-import tailwindcss from '@tailwindcss/vite';
+import remark from '@astrojs/markdown-remark';
+import tailwind from '@astrojs/tailwind';
 
 // https://astro.build/config
 export default defineConfig({
-  vite: {
-    plugins: [tailwindcss()]
-  }
+  integrations: [
+    remark(),          // for rendering markdown
+    tailwind()         // official Tailwind plugin for Astro
+  ]
 });
+
