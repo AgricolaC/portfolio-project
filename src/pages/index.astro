@@ -6,12 +6,49 @@ import titanic from '../content/eda/titanic-analysis.md';
   <!-- Hero Section -->
   <section id="hero" class="min-h-screen flex flex-col justify-center items-center text-center px-6 fade-in pt-24">
     <div class="w-80 h-80 rounded-full border-8 border-primary mb-6 overflow-hidden">
-      <img src="/public/images/profile_picture.jpeg" alt="Ahmet Berk Calisir" class="object-cover w-full h-full" />
+      <img src="/profile-placeholder.jpg" alt="Ahmet Berk Calisir" class="object-cover w-full h-full" />
     </div>
     <h1 class="text-4xl font-bold text-primary mb-4">Ahmet Berk Calisir</h1>
-    <p class="text-gray-700 text-lg max-w-xl mb-6">
-      MSc Data Science & Engineering @ Politecnico di Torino
-    </p>
+    <div class="text-gray-700 text-lg max-w-xl mb-6 h-8">
+  <span>I am a </span><span id="typing-text" class="text-primary font-semibold"></span>
+</div>
+<script>
+  const phrases = [
+    "MSc in Data Science & Engineering.",
+    "aspiring computer engineer.",
+    "Paradox Games legend.",
+    "machine learning enthusiast.",
+    "student of Italian language."
+  ];
+  let i = 0;
+  let txt = '';
+  let isDeleting = false;
+  let speed = 80;
+
+  function type() {
+    const display = document.getElementById('typing-text');
+    const fullTxt = phrases[i % phrases.length];
+
+    if (isDeleting) {
+      txt = fullTxt.substring(0, txt.length - 1);
+    } else {
+      txt = fullTxt.substring(0, txt.length + 1);
+    }
+
+    display.innerHTML = txt;
+
+    if (!isDeleting && txt === fullTxt) {
+      setTimeout(() => isDeleting = true, 1500);
+    } else if (isDeleting && txt === '') {
+      isDeleting = false;
+      i++;
+    }
+
+    setTimeout(type, isDeleting ? speed / 2 : speed);
+  }
+
+  window.addEventListener('DOMContentLoaded', type);
+</script>
     <a href="#projects" class="inline-block px-6 py-2 bg-primary text-white rounded hover:bg-primary-light transition transform hover:scale-105">
       View Projects
     </a>
@@ -41,43 +78,63 @@ import titanic from '../content/eda/titanic-analysis.md';
 
   <!-- Education & Experience Section -->
   <section id="education" class="py-20 px-6 bg-gray-50 fade-in">
-  <h2 class="text-3xl font-semibold text-primary mb-6">Education & Experience</h2>
-
-  <div class="mb-8">
-    <a href="/ahmet-berk-calisir-cv.pdf" download class="inline-block px-4 py-2 bg-primary text-white rounded hover:bg-primary-light transition">
-      Download My Resume (PDF)
-    </a>
-  </div>
-
-  <div class="relative border-l-4 border-primary pl-6 space-y-10">
-    <div class="relative">
-      <div class="absolute left-[-1.25rem] top-1 w-6 h-6 bg-white text-primary rounded-full border-2 border-primary flex items-center justify-center text-sm">🎓</div>
-      <h3 class="text-xl font-bold text-primary">Politecnico di Torino</h3>
-      <p class="text-sm text-gray-600">MSc in Data Science & Engineering (2024 – present)</p>
-      <p class="text-sm text-gray-600">BSc in Computer Engineering (2020 – 2024)</p>
+    <h2 class="text-3xl font-semibold text-primary mb-6">Education & Experience</h2>
+  
+    <div class="mb-8">
+      <a href="/ahmet-berk-calisir-cv.pdf" download class="inline-block px-4 py-2 bg-primary text-white rounded hover:bg-primary-light transition">
+        Download My Resume (PDF)
+      </a>
     </div>
-
-    <div class="relative">
-      <div class="absolute left-[-1.25rem] top-1 w-6 h-6 bg-white text-primary rounded-full border-2 border-primary flex items-center justify-center text-sm">🏢</div>
-      <h3 class="text-xl font-bold text-primary">Maserati (Stellantis) — Data Management Intern</h3>
-      <p class="text-sm text-gray-600">Oct 2023 – Apr 2024</p>
-      <ul class="list-disc list-inside text-sm text-gray-600">
-        <li>Automated Visual BOM creation, saving engineers ~20 min per vehicle revision</li>
-        <li>Built necessary pipelines (Excel → SQL → Power BI) to create dashboards used by 5 managers weekly</li>
-      </ul>
+  
+    <div class="relative border-l-4 border-primary pl-6 space-y-10">
+      <!-- Education Block -->
+      <div class="relative">
+        <div class="absolute left-[-1.25rem] top-1 w-6 h-6 bg-white text-primary rounded-full border-2 border-primary flex items-center justify-center text-sm">🎓</div>
+        <h3 class="text-xl font-bold text-primary">Politecnico di Torino</h3>
+        <p class="text-sm text-gray-600">MSc in Data Science & Engineering (2024 – present)</p>
+        <p class="text-sm text-gray-600">BSc in Computer Engineering (2020 – 2024)</p>
+        <button onclick="this.nextElementSibling.classList.toggle('hidden')" class="mt-2 text-sm text-primary hover:underline">Toggle Details</button>
+        <div class="hidden mt-2 text-sm text-gray-600">
+          <p><strong>Key Courses (BSc):</strong> Algorithms and Data Structures, Operating Systems, Database Systems, Software Engineering, Machine Learning Fundamentals</p>
+          <p><strong>Key Courses (MSc):</strong> Statistical Learning, Deep Learning, Data Mining, Distributed Systems, Cloud Computing, Data Visualization</p>
+          <p>Hands-on with Python, MATLAB, SQL, Spark, and Linux environments throughout my academic path.</p>
+        </div>
+      </div>
+  
+      <!-- Maserati Block -->
+      <div class="relative">
+        <div class="absolute left-[-1.25rem] top-1 w-6 h-6 bg-white text-primary rounded-full border-2 border-primary flex items-center justify-center text-sm">🏢</div>
+        <h3 class="text-xl font-bold text-primary">Maserati (Stellantis) — R&D / Data Management Intern</h3>
+        <p class="text-sm text-gray-600">Oct 2023 – Apr 2024</p>
+        <button onclick="this.nextElementSibling.classList.toggle('hidden')" class="mt-2 text-sm text-primary hover:underline">Toggle Details</button>
+        <div class="hidden mt-2">
+          <ul class="list-disc list-inside text-sm text-gray-600">
+            <li>Created and automated Visual BOMs in Excel using advanced VBA, cutting processing time per revision by 20+ minutes</li>
+            <li>Built dynamic dashboards in Power BI, integrated via SQL queries and Power Query transformations</li>
+            <li>Assisted R&D engineers in analyzing component-level data and preparing digital documentation pipelines</li>
+            <li>Wrote internal documentation for BI reporting, including plug-in usage and update workflows</li>
+            <li>Collaborated cross-functionally with supply chain and design teams for data structuring</li>
+          </ul>
+        </div>
+      </div>
+  
+      <!-- Kaya Yapı Group Block -->
+      <div class="relative">
+        <div class="absolute left-[-1.25rem] top-1 w-6 h-6 bg-white text-primary rounded-full border-2 border-primary flex items-center justify-center text-sm">🏢</div>
+        <h3 class="text-xl font-bold text-primary">Kaya Yapı Group — Data Analysis Intern</h3>
+        <p class="text-sm text-gray-600">Jun 2021 – Sep 2021</p>
+        <button onclick="this.nextElementSibling.classList.toggle('hidden')" class="mt-2 text-sm text-primary hover:underline">Toggle Details</button>
+        <div class="hidden mt-2">
+          <ul class="list-disc list-inside text-sm text-gray-600">
+            <li>Designed Excel VBA macros to digitize monthly financial reports and eliminate manual prep work</li>
+            <li>Built Excel models for cost tracking and forecasting government tender performance</li>
+            <li>Created summary dashboards and collaborated directly with CFO to identify KPI indicators</li>
+            <li>Contributed to reporting infrastructure during a transitional digitalization phase</li>
+          </ul>
+        </div>
+      </div>
     </div>
-
-    <div class="relative">
-      <div class="absolute left-[-1.25rem] top-1 w-6 h-6 bg-white text-primary rounded-full border-2 border-primary flex items-center justify-center text-sm">🏢</div>
-      <h3 class="text-xl font-bold text-primary">Kaya Yapı Group — Data Analysis Intern</h3>
-      <p class="text-sm text-gray-600">Jun 2021 – Sep 2021</p>
-      <ul class="list-disc list-inside text-sm text-gray-600">
-        <li>Converted manual financial reports into Excel VBA macros</li>
-        <li>Contributed KPI dashboard to CFO for next-quarter tenders</li>
-      </ul>
-    </div>
-  </div>
-</section>
+  </section>
 
   <!-- Projects Section -->
   <section id="projects" class="py-20 px-6 bg-white fade-in">
