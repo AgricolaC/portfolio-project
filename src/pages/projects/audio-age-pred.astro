@@ -5,8 +5,7 @@ import Layout from '../../components/Layout.astro';
   <section class="py-24 px-6 fade-in">
     <h1 class="text-3xl font-bold text-primary mb-4">Age Prediction from Audio Samples</h1>
     <p class="text-gray-700 max-w-2xl mb-4">
-      A project using PyTorch, Librosa, and scikit-learn to predict the age of speakers from raw audio data. This work involved feature engineering of voice characteristics, preprocessing 3600+ audio samples, and benchmarking ensemble models.
-    </p>
+      This project tackles the challenge of predicting a speaker's age using acoustic and linguistic features extracted from audio recordings of speech. Using a dataset of over 3,600 speech samples collected under controlled conditions, we built a robust regression pipeline to estimate speaker age based on a wide range of features such as pitch, jitter, shimmer, zero-crossing rate, and harmonic-to-noise ratio. The task was evaluated using Root Mean Square Error (RMSE), and we ensured that the model generalized well by training on a development set and evaluating on a held-out evaluation set.    </p>
     <ul class="list-disc list-inside text-primary-dark">
       <li>Extracted MFCCs and spectral features using Librosa</li>
       <li>Used oversampling and weighted loss for class imbalance</li>
