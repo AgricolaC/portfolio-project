@@ -9,3 +9,4 @@ export default defineConfig({
     mdx()  // 👈 Use MDX to support .md and .mdx files
   ]
 });
+

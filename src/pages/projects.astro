@@ -6,15 +6,15 @@ import Layout from '../components/Layout.astro'; // Use shared layout
 
   <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
     <!-- Responsive grid: 1 column on mobile, 2 on medium screens -->
-    <div class="p-4 border rounded-xl hover:shadow-md">
+    <div class="p-5 border border-gray-200 rounded-xl shadow-sm hover:shadow-md transition">
       <!-- Card container with border and hover effect -->
-      <h2 class="text-xl font-semibold">Titanic EDA</h2>
-      <p class="text-sm text-gray-600">
-        Exploratory data analysis of Titanic survival data using Python.
-      </p>
-      <a href="/eda" class="text-blue-500 hover:underline">View EDA →</a>
+      <h2 class="text-xl font-semibold text-primary">Titanic EDA</h2>
+      <p class="text-sm text-gray-600">Exploratory data analysis of Titanic survival data using Python.</p>
+      <a href="/eda" class="text-primary-light hover:underline inline-block mt-2">View EDA →</a>
     </div>
-    
     <!-- 🔜 You can add more project cards below like this -->
   </div>
 </Layout>
+
+
+
