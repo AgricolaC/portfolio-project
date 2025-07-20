@@ -1,0 +1,17 @@
+---
+import Layout from '../../components/Layout.astro';
+---
+<Layout title="Age Prediction from Audio Samples">
+  <section class="py-24 px-6 fade-in">
+    <h1 class="text-3xl font-bold text-primary mb-4">Age Prediction from Audio Samples</h1>
+    <p class="text-gray-700 max-w-2xl mb-4">
+      A project using PyTorch, Librosa, and scikit-learn to predict the age of speakers from raw audio data. This work involved feature engineering of voice characteristics, preprocessing 3600+ audio samples, and benchmarking ensemble models.
+    </p>
+    <ul class="list-disc list-inside text-primary-dark">
+      <li>Extracted MFCCs and spectral features using Librosa</li>
+      <li>Used oversampling and weighted loss for class imbalance</li>
+      <li>Compared XGBoost, CatBoost, Random Forest, and Linear Regression</li>
+      <li>Achieved RMSE reduction from 14.2 to 9.36</li>
+    </ul>
+  </section>
+</Layout>
