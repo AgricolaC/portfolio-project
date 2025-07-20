@@ -6,7 +6,7 @@ import titanic from '../content/eda/titanic-analysis.md';
   <!-- Hero Section -->
   <section id="hero" class="min-h-screen flex flex-col justify-center items-center text-center px-6 fade-in pt-24">
     <div class="w-80 h-80 rounded-full border-8 border-primary mb-6 overflow-hidden">
-      <img src="/profile-placeholder.jpg" alt="Ahmet Berk Calisir" class="object-cover w-full h-full" />
+      <img src="/public/images/profile_picture.jpeg" alt="Ahmet Berk Calisir" class="object-cover w-full h-full" />
     </div>
     <h1 class="text-4xl font-bold text-primary mb-4">Ahmet Berk Calisir</h1>
     <p class="text-gray-700 text-lg max-w-xl mb-6">
@@ -90,6 +90,7 @@ import titanic from '../content/eda/titanic-analysis.md';
         </p>
         <a href="/projects/audio-age-prediction" class="text-primary hover:underline inline-block mt-2">Read more →</a>
       </div>
+      
       <div class="p-5 border border-primary/30 bg-white rounded-xl shadow-md hover:shadow-xl transition transform hover:-translate-y-1">
         <h3 class="text-xl font-semibold text-primary">PCA on Marketing Surveys</h3>
         <p class="text-primary-dark text-sm">
@@ -97,8 +98,18 @@ import titanic from '../content/eda/titanic-analysis.md';
         </p>
         <a href="/projects/pca-marketing" class="text-primary hover:underline inline-block mt-2">Read more →</a>
       </div>
+      
+      <div class="p-5 border border-primary/30 bg-white rounded-xl shadow-md hover:shadow-xl transition transform hover:-translate-y-1">
+        <h3 class="text-xl font-semibold text-primary">Federated Learning Under the Lens of Model Editing for Image Classification</h3>
+        <p class="text-primary-dark text-sm">
+          In this project, we explored how model editing techniques such as sparse fine-tuning and low-rank adaptation (LoRA) can improve Federated Learning (FL) under challenging conditions like non-IID data and limited communication. By combining theoretical insights with practical implementations on the CIFAR-100 dataset using a pretrained ViT-S/16 (DINO) backbone, we analyzed trade-offs in performance, memory efficiency, and update mergeability across multiple FL configurations.
+        </p>
+        <a href="/projects/federated-learning" class="text-primary hover:underline inline-block mt-2">Read more →</a>
+      </div>
     </div>
   </section>
+
+
 
   <!-- Contact Section -->
   <section id="contact" class="py-20 px-6 bg-gray-100 fade-in relative">
