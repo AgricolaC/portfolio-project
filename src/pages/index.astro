@@ -58,7 +58,25 @@ import titanic from '../content/eda/titanic-analysis.md';
   </section>
 
   <!-- Projects Section -->
-  <!-- (unchanged content) -->
+  <section id="projects" class="py-20 px-6 bg-white fade-in">
+    <h2 class="text-3xl font-semibold text-primary mb-8">Featured Projects</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+      <div class="p-5 border border-primary/30 bg-white rounded-xl shadow-md hover:shadow-xl transition transform hover:-translate-y-1">
+        <h3 class="text-xl font-semibold text-primary">Age Prediction from Audio Samples</h3>
+        <p class="text-primary-dark text-sm">
+          Built a machine learning pipeline to predict speaker age from voice features using PyTorch & Librosa. Benchmarked 3 models, reducing RMSE to 9.36.
+        </p>
+        <a href="/projects/audio-age-prediction" class="text-primary hover:underline inline-block mt-2">Read more →</a>
+      </div>
+      <div class="p-5 border border-primary/30 bg-white rounded-xl shadow-md hover:shadow-xl transition transform hover:-translate-y-1">
+        <h3 class="text-xl font-semibold text-primary">PCA on Marketing Surveys</h3>
+        <p class="text-primary-dark text-sm">
+          Applied dimensionality reduction to behavioral survey data. Reduced 100+ features to 5 latent factors explaining 78% of variance.
+        </p>
+        <a href="/projects/pca-marketing" class="text-primary hover:underline inline-block mt-2">Read more →</a>
+      </div>
+    </div>
+  </section>
 
   <!-- Contact Section -->
   <section id="contact" class="py-20 px-6 bg-gray-100 fade-in relative">
@@ -76,6 +94,7 @@ import titanic from '../content/eda/titanic-analysis.md';
     <div class="flex gap-4">
       <a href="https://github.com/AgricolaC" target="_blank" class="text-primary hover:underline">GitHub</a>
       <a href="https://linkedin.com/in/ahmet-berk-calisir" target="_blank" class="text-primary hover:underline">LinkedIn</a>
+      <a href="/" class="text-primary hover:underline">Home</a>
     </div>
 
     <!-- Contact Form Modal -->
@@ -93,4 +112,3 @@ import titanic from '../content/eda/titanic-analysis.md';
     </div>
   </section>
 </Layout>
-
