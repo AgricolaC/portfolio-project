@@ -1,0 +1,17 @@
+---
+import Layout from '../../components/Layout.astro';
+---
+<Layout title="Federated Learning Under the Lens of Model Editing for Image Classification">
+  <section class="py-24 px-6 fade-in">
+    <h1 class="text-3xl font-bold text-primary mb-4">Federated Learning Under the Lens of Model Editing for Image Classification</h1>
+    <p class="text-gray-700 max-w-2xl mb-4">
+      In this project, we explored how model editing techniques such as sparse fine-tuning and low-rank adaptation (LoRA) can improve Federated Learning (FL) under challenging conditions like non-IID data and limited communication. By combining theoretical insights with practical implementations on the CIFAR-100 dataset using a pretrained ViT-S/16 (DINO) backbone, we analyzed trade-offs in performance, memory efficiency, and update mergeability across multiple FL configurations.
+    </p>
+    <ul class="list-disc list-inside text-primary-dark">
+      <li>Implemented a full federated learning pipeline using PyTorch, simulating both IID and non-IID client distributions with customizable parameters for participation rate, local steps, and client heterogeneity.</li>
+      <li>ntegrated sparse fine-tuning based on Fisher Information, introducing a custom SparseSGDM optimizer that enables selective parameter updates to reduce communication and improve mergeability.</li>
+      <li>Compared multiple gradient masking strategies (Fisher, magnitude-based, and random) to assess their robustness and impact on federated performance.</li>
+      <li>Benchmarked LoRA as a lightweight, modular alternative to sparse fine-tuning, demonstrating trade-offs in accuracy and efficiency under federated constraints.</li>
+    </ul>
+  </section>
+</Layout>
