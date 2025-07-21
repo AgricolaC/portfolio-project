@@ -23,4 +23,4 @@ Let’s face it, social media is a mess. I wanted a place to post thoughts, opin
 
 This site will grow with time. I’ll be writing about data science projects, notebook experiments, tools I like, and broader reflections on work, study, video games or whatever philosophical rabbit hole I fall into.
 
-Thanks for reading, this is Berk and I want you to know that I will achieve great things one day, so you should note the name down. 
+Thanks for reading — this is Berk, and I want you to know that I will achieve great things one day, so you should note the name down.
