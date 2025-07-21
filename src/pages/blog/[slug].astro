@@ -11,18 +11,20 @@ export async function getStaticPaths() {
 
 const { slug } = Astro.params;
 
-// Load all blog posts and find the one that matches the slug
 const posts: CollectionEntry<'blog'>[] = await getCollection('blog');
 const post = posts.find((p) => p.slug === slug);
 if (!post) throw new Error(`Post not found: ${slug}`);
 ---
 
 <Layout title={post.data.title}>
-  <article class="prose prose-primary max-w-4xl mx-auto py-12 px-6">
-    <h1>{post.data.title}</h1>
+  <article class="py-12 px-6">
+    <h1 class="text-3xl font-bold text-primary mb-2">{post.data.title}</h1>
     <p class="text-sm text-gray-500 mb-8">{post.data.date}</p>
-    {post.body}
+
+    <div class="prose prose-primary max-w-4xl mx-auto" set:html={post.body} />
   </article>
 </Layout>
+
+
 
 
