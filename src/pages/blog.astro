@@ -1,13 +1,22 @@
 ---
 import Layout from '../components/Layout.astro';
+import { getCollection, type CollectionEntry } from 'astro:content';
+const posts: CollectionEntry<'blog'>[] = await getCollection('blog');
 ---
+
 <Layout title="Blog">
-  <section class="py-24 px-6 fade-in">
-    <h1 class="text-3xl font-bold text-primary mb-4">My Articles</h1>
-    <p class="text-gray-700 mb-6 max-w-2xl">
-      I write about data science, psychology, philosophy, and the intersection of technology with human behavior.
-    </p>
-    <!-- Blog post list will be rendered here using Astro Content Collections or Markdown pages -->
-    <p class="text-sm text-gray-500">Coming soon: Posts powered by Markdown or MDX.</p>
+  <section class="py-16 px-6 fade-in">
+    <h1 class="text-3xl font-bold text-primary mb-6">My Blog</h1>
+
+    <ul class="space-y-6">
+      {posts.map(post => (
+        <li>
+          <a href={`/blog/${post.slug}`} class="text-xl text-primary font-semibold hover:underline">
+            {post.data.title}
+          </a>
+          <p class="text-sm text-gray-600">{post.data.date} · {post.data.description}</p>
+        </li>
+      ))}
+    </ul>
   </section>
 </Layout>
