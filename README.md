@@ -1,52 +1,79 @@
-# Astro Starter Kit: Basics
+# 💻 Personal Portfolio & Blog
 
-```sh
-npm create astro@latest -- --template basics
+This is my personal website built with [Astro](https://astro.build/), [Tailwind CSS](https://tailwindcss.com/), and Markdown-powered blog content. It serves as both a portfolio and a writing outlet, showcasing projects, skills, and personal reflections.
+
+## 🚀 Features
+
+- ⚡ Built with Astro for performance and clean structure
+- 🎨 Styled with Tailwind CSS (green theme matching my vibe)
+- 📝 Markdown blog with content collections
+- 🧠 Typing animation in hero section
+- 📂 Project detail pages (with GitHub & PDF links)
+- 🧾 Downloadable CV + timeline for experience
+- 📬 Contact modal with name/email/message
+
+---
+
+## 🧱 Tech Stack
+
+| Feature                | Tech Used                 |
+|------------------------|---------------------------|
+| Framework              | Astro                     |
+| Styling                | Tailwind CSS + Typography Plugin |
+| Blog System            | `astro:content` collections |
+| Deployment             | Vercel (via GitHub)       |
+| Animations             | CSS + JS           |
+
+---
+
+## 🗂️ Architecture
+
+```
+src/
+├── components/       → Layout.astro, Navbar.astro, etc.
+├── content/          → blog/ (markdown posts)
+│   └── config.ts     → blog schema (title, date, tags, ...)
+├── pages/            → index.astro, blog.astro, [slug].astro
+├── styles/           → global.css (Tailwind setup + custom animations)
+public/               → profile picture, PDFs, assets
 ```
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+---
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## 📘 Blog System (Astro Content Collections)
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+- Posts live in `src/content/blog/*.md`
+- Defined collection in `src/content/config.ts`
+- Used `getCollection('blog')` to list posts
+- Dynamic routing via `blog/[slug].astro`
+- Rendered Markdown with:
 
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
+```astro
+const { Content } = await post.render();
+...
+<div class="prose prose-primary">
+  <Content />
+</div>
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+---
 
-## 🧞 Commands
+## 🧠 What I Learned
 
-All commands are run from the root of the project, from a terminal:
+- How to structure and deploy an Astro site from scratch
+- How `astro:content` works and how to render Markdown safely
+- How Tailwind's `prose` plugin is used in typography
+- The importance of correctly placing static assets in `public/`
+- How to create reusable layouts, components, and content systems
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+---
 
-## 👀 Want to learn more?
+## 🔗 Live Site
+**[View the live version on Vercel →](calisirportfolio.vercel.app/)**
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+Feel free to reach out, fork, or browse around.
+
+---
+
+© 2025 Ahmet Berk Calisir
+
