@@ -9,7 +9,7 @@ const posts: CollectionEntry<'blog'>[] = await getCollection('blog');
     <h1 class="text-3xl font-bold text-primary mb-6">My Blog</h1>
 
     <ul class="space-y-6">
-      {posts.map(post => (
+      {posts.map((post) => (
         <li>
           <a href={`/blog/${post.slug}`} class="text-xl text-primary font-semibold hover:underline">
             {post.data.title}
@@ -20,3 +20,4 @@ const posts: CollectionEntry<'blog'>[] = await getCollection('blog');
     </ul>
   </section>
 </Layout>
+
