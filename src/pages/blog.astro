@@ -1,23 +1,35 @@
 ---
 import Layout from '../components/Layout.astro';
 import { getCollection, type CollectionEntry } from 'astro:content';
-const posts: CollectionEntry<'blog'>[] = await getCollection('blog');
+
+const posts: CollectionEntry<'blog'>[] = (await getCollection('blog')).sort(
+  (a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
+);
 ---
 
 <Layout title="Blog">
   <section class="py-16 px-6 fade-in">
     <h1 class="text-3xl font-bold text-primary mb-6">My Blog</h1>
 
-    <ul class="space-y-6">
+    <ul class="space-y-8">
       {posts.map((post) => (
-        <li>
-          <a href={`/blog/${post.slug}`} class="text-xl text-primary font-semibold hover:underline">
+        <li class="border-b border-gray-200 pb-6">
+          <a href={`/blog/${post.slug}`} class="text-2xl text-primary font-semibold hover:underline">
             {post.data.title}
           </a>
-          <p class="text-sm text-gray-600">{post.data.date} · {post.data.description}</p>
+          <p class="text-sm text-gray-500 mb-2">{post.data.date}</p>
+          {post.data.tags && (
+            <div class="mb-2 flex flex-wrap gap-2">
+              {post.data.tags.map(tag => (
+                <span class="bg-primary/10 text-primary text-xs px-2 py-1 rounded-full">#{tag}</span>
+              ))}
+            </div>
+          )}
+          <p class="text-sm text-gray-700">{post.data.description}</p>
         </li>
       ))}
     </ul>
   </section>
 </Layout>
+
 
