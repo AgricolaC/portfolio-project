@@ -1,0 +1,102 @@
+---
+import Layout from '../../components/Layout.astro';
+---
+<Layout title="Global Health Inequality: Spending vs Life Expectancy">
+  <section class="py-24 px-6 fade-in">
+    <h1 class="text-3xl font-bold text-primary mb-4">Global Health Inequality: Spending vs Life Expectancy</h1>
+    <p class="text-gray-700 max-w-2xl mb-6">
+      This EDA project investigates the complex relationship between global health expenditures and life expectancy across countries using World Bank data. It highlights inequality, efficiency, and visualizes health justice through data storytelling.
+    </p>
+
+    <div class="prose prose-primary max-w-4xl">
+      <h2>🌍 Project Overview</h2>
+      <p>
+        Why do some countries achieve high life expectancy with modest budgets, while others spend massively with little to show? This project explores this question using <strong>health spending data</strong> and <strong>life expectancy</strong> metrics across 1995–2014.
+      </p>
+
+      <h2>📦 Data Sources & Structure</h2>
+      <ul>
+        <li>World Bank: Health Expenditure (per capita, PPP-adjusted, % of GDP)</li>
+        <li>World Bank: Life Expectancy at Birth (years)</li>
+      </ul>
+      <p>We reshaped yearly data into long format and merged by ISO3 country codes.</p>
+
+      <h2>📈 Long-Term Trends</h2>
+      <p>Both health spending and life expectancy have risen globally, but inequality in investment far exceeds inequality in outcomes.</p>
+      <img src="/images/life_expectancy_over_time.png" alt="Life Expectancy Over Time" class="rounded shadow-md my-6" />
+
+      <img src="/images/gini_coefficient_over_time.png" alt="Gini Coefficients Over Time" class="rounded shadow-md my-6" />
+      <p>
+        While <strong>life expectancy Gini</strong> remains low (more equal), <strong>spending Gini</strong> reaches up to 0.70, revealing extreme disparities in investment.
+      </p>
+
+      <h2>🌀 Inequality Snapshot (2014)</h2>
+      <p>We used the <strong>Gini Index</strong> and <strong>Lorenz Curves</strong> to visualize and quantify inequality across countries.</p>
+      <ul>
+        <li>Life Expectancy Gini (2014): <strong>0.066</strong></li>
+        <li>Health Spending (PPP per capita): <strong>0.61</strong></li>
+        <li>Health Spending (% of GDP): <strong>0.17</strong></li>
+      </ul>
+      <img src="/images/lorenz_curves_2014.png" alt="Lorenz Curves - 2014" class="rounded shadow-md my-6" />
+
+      <blockquote>
+        A small percentage of wealthy nations dominate global health spending — but not necessarily global health outcomes.
+      </blockquote>
+
+      <h2>⚖️ The Efficiency Frontier</h2>
+      <p>
+        We define a country’s health <strong>efficiency</strong> as the life expectancy it achieves for its spending. Using <strong>log-linear regression</strong> of PPP-adjusted health spending vs. life expectancy, we calculate residuals:
+      </p>
+      <ul>
+        <li>Positive residual → Efficient (Green)</li>
+        <li>Negative residual → Inefficient (Red)</li>
+      </ul>
+
+      <img src="/images/efficiency_frontier_2014_health_exp_ppp_per_capita.png" alt="Efficiency Frontier - 2014" class="rounded shadow-md my-6" />
+
+      <h3>🟢 Most Efficient Countries</h3>
+      <ul>
+        <li>Sri Lanka</li>
+        <li>Vietnam</li>
+        <li>Cuba</li>
+        <li>Albania</li>
+        <li>Bangladesh</li>
+      </ul>
+
+      <h3>🔴 Least Efficient Countries</h3>
+      <ul>
+        <li>Swaziland (Eswatini)</li>
+        <li>Guinea</li>
+        <li>Namibia</li>
+        <li>Equatorial Guinea</li>
+        <li>Botswana</li>
+      </ul>
+
+      <blockquote>
+        Many high-spending countries show negative residuals — suggesting systemic inefficiencies, often driven by inequality or mismanagement.
+      </blockquote>
+
+      <h2>📊 Interactive Dashboard</h2>
+      <p>
+        An animated Plotly dashboard lets users explore the efficiency frontier across years and health indicators.
+      </p>
+      <a href="/interactive/efficiency-frontier.html" target="_blank" class="text-primary hover:underline">
+        👉 View the Interactive Dashboard
+      </a>
+
+      <h2>🧠 Takeaways</h2>
+      <ul>
+        <li>Life expectancy is more equal than spending — money alone doesn't guarantee health</li>
+        <li>Efficiency analysis reveals unsung success stories among low-income nations</li>
+        <li>Global health justice must account for value, not just volume of investment</li>
+      </ul>
+
+      <h2>💡 Reflection</h2>
+      <p>
+        This project is not just about numbers — it’s about what those numbers say about policy, inequality, and value. It calls on policymakers to re-evaluate how health systems are measured, funded, and benchmarked.
+      </p>
+
+      <p class="mt-12 text-sm text-gray-500">© 2025 Ahmet Berk Çalışır — <a href="/" class="text-primary hover:underline">Back to Portfolio</a></p>
+    </div>
+  </section>
+</Layout>
